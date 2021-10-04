@@ -40,6 +40,7 @@ const MainSection = () => {
   const [selected, setSelected] = useState(0);
   const updateSelected = (key) => {
     setSelected(key);
+    console.log(key);
   };
 
   const updateIndex = () => {

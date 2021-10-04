@@ -6,6 +6,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 const AnswerBar = (props) => {
+  console.log(props.selected);
   const answers = [
     "Never",
     "Once in a While",
@@ -62,22 +63,104 @@ const AnswerBar = (props) => {
               justify-content: space-between;
             `}
           >
-            {answers.map((answer, index) => (
-              <div css={css``} key={index}>
-                <button
-                  css={css`
-                    background-color: ${props.selected === 1
-                      ? "#23AB5C"
-                      : "#383838"};
-                    height: 16px;
-                    width: 16px;
-                    border-radius: 20px;
-                    border: 0;
-                  `}
-                  onClick={() => props.updateSelected(index + 1)}
-                />
-              </div>
-            ))}
+            <div css={css``}>
+              <button
+                css={css`
+                  background-color: ${props.selected === 1
+                    ? "#23AB5C"
+                    : "#383838"};
+                  height: 16px;
+                  width: 16px;
+                  border-radius: 20px;
+                  border: 0;
+                `}
+                onClick={() => props.updateSelected(1)}
+              />
+            </div>
+            <div css={css``}>
+              <button
+                css={css`
+                  background-color: ${props.selected === 2
+                    ? "#23AB5C"
+                    : "#383838"};
+                  height: 16px;
+                  width: 16px;
+                  border-radius: 20px;
+                  border: 0;
+                `}
+                onClick={() => props.updateSelected(2)}
+              />
+            </div>
+            <div css={css``}>
+              <button
+                css={css`
+                  background-color: ${props.selected === 3
+                    ? "#23AB5C"
+                    : "#383838"};
+                  height: 16px;
+                  width: 16px;
+                  border-radius: 20px;
+                  border: 0;
+                `}
+                onClick={() => props.updateSelected(3)}
+              />
+            </div>
+            <div css={css``}>
+              <button
+                css={css`
+                  background-color: ${props.selected === 4
+                    ? "#23AB5C"
+                    : "#383838"};
+                  height: 16px;
+                  width: 16px;
+                  border-radius: 20px;
+                  border: 0;
+                `}
+                onClick={() => props.updateSelected(4)}
+              />
+            </div>
+            <div css={css``}>
+              <button
+                css={css`
+                  background-color: ${props.selected === 5
+                    ? "#23AB5C"
+                    : "#383838"};
+                  height: 16px;
+                  width: 16px;
+                  border-radius: 20px;
+                  border: 0;
+                `}
+                onClick={() => props.updateSelected(5)}
+              />
+            </div>
+            <div css={css``}>
+              <button
+                css={css`
+                  background-color: ${props.selected === 6
+                    ? "#23AB5C"
+                    : "#383838"};
+                  height: 16px;
+                  width: 16px;
+                  border-radius: 20px;
+                  border: 0;
+                `}
+                onClick={() => props.updateSelected(6)}
+              />
+            </div>
+            <div css={css``}>
+              <button
+                css={css`
+                  background-color: ${props.selected === 7
+                    ? "#23AB5C"
+                    : "#383838"};
+                  height: 16px;
+                  width: 16px;
+                  border-radius: 20px;
+                  border: 0;
+                `}
+                onClick={() => props.updateSelected(7)}
+              />
+            </div>
           </div>
           <div
             css={css`
