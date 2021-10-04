@@ -51,7 +51,7 @@ const MainSection = () => {
   const onNext = () => {
     const tempSelected = selected;
     let tempIndex = index;
-    if (tempIndex == 2) {
+    if (tempIndex == 20) {
       let tempResult = (bad + (32 - good)) / 21;
       if (tempResult < 3) {
         setResultPrompt("you are doing Good");
