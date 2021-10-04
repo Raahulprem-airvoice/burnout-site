@@ -63,7 +63,7 @@ const AnswerBar = (props) => {
             `}
           >
             {answers.map((answer, index) => (
-              <div css={css``}>
+              <div css={css``} key={index}>
                 <button
                   css={css`
                     background-color: ${props.selected === 1
@@ -90,6 +90,7 @@ const AnswerBar = (props) => {
           >
             {answers.map((answer, index) => (
               <div
+                key={index}
                 css={css`
                   @media (max-width: 900px) {
                     font-size: 16px;
