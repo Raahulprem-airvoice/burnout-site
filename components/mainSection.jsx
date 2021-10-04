@@ -51,7 +51,7 @@ const MainSection = () => {
   const onNext = () => {
     const tempSelected = selected;
     let tempIndex = index;
-    if (tempIndex == 20) {
+    if (tempIndex == 2) {
       let tempResult = (bad + (32 - good)) / 21;
       if (tempResult < 3) {
         setResultPrompt("you are doing Good");
@@ -171,6 +171,10 @@ const MainSection = () => {
           >
             <h1
               css={css`
+                @media (max-width: 540px) {
+                  font-size: 24px;
+                  line-height: 28px;
+                }
                 font-family: Avenir;
                 font-style: normal;
                 font-weight: 850;
@@ -194,6 +198,11 @@ const MainSection = () => {
             <div>
               <h1
                 css={css`
+                  @media (max-width: 540px) {
+                    margin-top: 24px
+                    font-size: 20px;
+                    line-height: 28px;
+                  }
                   font-family: Avenir;
                   font-style: normal;
                   font-weight: 850;
