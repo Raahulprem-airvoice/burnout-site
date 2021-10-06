@@ -52,7 +52,7 @@ const MainSection = () => {
   const onNext = () => {
     const tempSelected = selected;
     let tempIndex = index;
-    if (tempIndex == 2) {
+    if (tempIndex == 20) {
       let tempResult = (bad + (32 - good)) / 21;
       tempResult = Math.round(tempResult * 100) / 100;
       if (tempResult < 3) {
