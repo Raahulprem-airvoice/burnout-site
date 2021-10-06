@@ -3,16 +3,17 @@
 import { css, jsx } from "@emotion/react";
 import Image from "next/image";
 import React, { useState } from "react";
+import { PopupButton, Widget } from "@typeform/embed-react";
 
 import AnswerBar from "./answerBar";
 import Questionaire from "./questionaire";
 
 const MainSection = () => {
   const [index, setIndex] = useState(0);
+  const [started, setStarted] = useState(false);
   const [good, setGood] = useState(0);
   const [bad, setBad] = useState(0);
-  const [result, setResult] = useState(0);
-  const [resultPrompt, setResultPrompt] = useState("null");
+  const [result, setResult] = useState({});
   const [resultPageLoad, setResultPageLoad] = useState(false);
   const [questions, setQuestions] = useState([
     "Being tired",
@@ -51,25 +52,41 @@ const MainSection = () => {
   const onNext = () => {
     const tempSelected = selected;
     let tempIndex = index;
-    if (tempIndex == 20) {
+    if (tempIndex == 2) {
       let tempResult = (bad + (32 - good)) / 21;
-      if (tempResult < 3) {
-        setResultPrompt("you are doing Good");
-      } else if (tempResult >= 3 && tempResult < 4) {
-        setResultPrompt(
-          " it would be wise for you to examine your work and life, evaluate your priorities and consider possible changes."
-        );
-      } else if (tempResult >= 4 && tempResult < 5) {
-        setResultPrompt(
-          "you are experiencing burnout to the extent that it is mandatory that you do something about it."
-        );
-      } else if (tempResult > 5) {
-        setResultPrompt(
-          "indicates an acute state and a need for immediate help."
-        );
-      }
       tempResult = Math.round(tempResult * 100) / 100;
-      setResult(tempResult);
+      if (tempResult < 3) {
+        setResult({
+          value: tempResult,
+          emoji: "/face/smiling-face-with-halo.svg",
+          color: "#76e250",
+          prompt: "You are doing Good",
+        });
+      } else if (tempResult >= 3 && tempResult < 4) {
+        setResult({
+          value: tempResult,
+          emoji: "/face/grimacing-face.svg",
+          color: "#e2dc50",
+          prompt:
+            " It would be wise for you to examine your work and life, evaluate your priorities and consider possible changes.",
+        });
+      } else if (tempResult >= 4 && tempResult < 5) {
+        setResult({
+          value: tempResult,
+          emoji: "/face/face-with-spiral-eyes.svg",
+          color: "#fd4931",
+          prompt:
+            "You are experiencing burnout to the extent that it is mandatory that you do something about it.",
+        });
+      } else if (tempResult > 5) {
+        setResult({
+          value: tempResult,
+          emoji: "/face/dizzy-face.svg",
+          color: "#ff3115",
+          prompt: "Indicates an acute state and a need for immediate help.",
+        });
+      }
+
       setResultPageLoad(true);
     } else {
       if (tempSelected > 0) {
@@ -96,111 +113,352 @@ const MainSection = () => {
   };
 
   return (
-    <div>
-      {!resultPageLoad ? (
-        <div>
+    <>
+      {!started ? (
+        <>
           <div
             css={css`
               display: flex;
+              align-items: center;
+              justify-content: center;
               flex-flow: column;
               background: #101010;
               width: 100%;
               height: 100%;
             `}
           >
-            <Questionaire questions={questions} index={index} />
-          </div>
-          <div
-            css={css`
-              margin-top: 64px;
-            `}
-          >
-            <AnswerBar updateSelected={updateSelected} selected={selected} />
-          </div>
-          <div
-            css={css`
-              margin: 120px 0 0 0;
-              right: 0;
-              display: flex;
-              align-items: center;
-              justify-content: flex-end;
-            `}
-          >
-            <button
+            <div
               css={css`
-                right: 0;
-                background-color: #202022;
-                border: 0;
-                border-radius: 8px;
-                padding: 2px 56px;
                 display: flex;
-                flex-flow: row wrap;
                 align-items: center;
                 justify-content: center;
+                flex-flow: row wrap;
+                background: #101010;
+                width: 100%;
+                height: 100%;
               `}
-              onClick={() => onNext()}
             >
               <h1
                 css={css`
+                  @media (max-width: 640px) {
+                    font-size: 28px;
+                  }
                   font-family: Avenir;
                   font-style: normal;
-                  font-weight: 850;
-                  font-size: 24px;
-                  line-height: 37px;
-                  display: flex;
-                  align-items: center;
-                  text-align: center;
-                  margin: 0 12px 0 0;
+                  font-weight: 800;
+                  font-size: 36px;
+                  line-height: 49px;
+                  margin: 0;
                   color: #ffffff;
+                `}
+              >
+                How
+              </h1>
+              <h1
+                css={css`
+                  @media (max-width: 640px) {
+                    font-size: 28px;
+                  }
+                  font-family: Avenir;
+                  font-style: normal;
+                  font-weight: 800;
+                  font-size: 36px;
+                  line-height: 49px;
+                  margin: 0 8px;
+                  color: #e25050;
+                `}
+              >
+                burnt out
+              </h1>
+              <h1
+                css={css`
+                  @media (max-width: 640px) {
+                    font-size: 28px;
+                  }
+                  font-family: Avenir;
+                  font-style: normal;
+                  font-weight: 800;
+                  font-size: 36px;
+                  line-height: 49px;
+                  margin: 0;
+                  color: #ffffff;
+                `}
+              >
+                are you?
+              </h1>
+            </div>
+            <div
+              css={css`
+                @media (max-width: 640px) {
+                  width: 80%;
+                }
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 72px;
+                flex-flow: row wrap;
+                background: #101010;
+                width: 100%;
+                height: 100%;
+              `}
+            >
+              <Image alt="" height={301} width={536} src="/landingImage.svg" />
+            </div>
+            <div
+              css={css`
+                @media (max-width: 640px) {
+                  width: 90%;
+                }
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 36px;
+                flex-flow: row wrap;
+                background: #101010;
+                width: 70%;
+                text-align: center;
+                height: 100%;
+              `}
+            >
+              <p
+                css={css`
+                  @media (max-width: 640px) {
+                    font-size: 14px;
+                  }
+                  font-family: Avenir;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 18px;
+                  line-height: 25px;
+                  text-align: center;
+                  margin: 0;
+                  color: #ffffff;
+                `}
+              >
+                Burnout is a state of emotional, physical, and mental exhaustion
+                caused by excessive and prolonged stress. It occurs when you
+                feel overwhelmed, emotionally drained, and unable to meet
+                constant demands. It reduces productivity and saps your energy,
+                leaving you feeling increasingly helpless, hopeless, cynical,
+                and resentful.
+              </p>
+            </div>
+            <div
+              css={css`
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 72px;
+                flex-flow: column;
+                background: #101010;
+                width: 70%;
+                text-align: center;
+                height: 100%;
+              `}
+            >
+              <h2
+                css={css`
+                  @media (max-width: 640px) {
+                    font-size: 20px;
+                  }
+                  font-family: Avenir;
+                  font-style: normal;
+                  font-weight: 800;
+                  font-size: 24px;
+                  line-height: 33px;
+                  margin: 0;
+                  color: #e25050;
+                `}
+              >
+                Are you facing burn out?
+              </h2>
+
+              <button
+                css={css`
+                  @media (max-width: 640px) {
+                    font-size: 20px;
+                    padding: 12px 24px;
+                  }
+                  font-family: Avenir;
+                  font-style: normal;
+                  font-weight: 800;
+                  font-size: 18px;
+                  line-height: 25px;
+                  background-color: #202022;
+                  padding: 18px 42px;
+                  text-align: center;
+                  margin: 32px 0;
+                  color: #ffffff;
+                  border-radius: 8px;
+                  border: 0;
                   &:hover {
                     cursor: pointer;
                   }
                 `}
+                onClick={() => setStarted(true)}
               >
-                Next
-              </h1>
-              <Image alt="" height={20} width={20} src="/next.svg" />
-            </button>
+                Start Assessment
+              </button>
+            </div>
           </div>
-        </div>
+        </>
       ) : (
         <div>
-          <div
-            css={css`
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            `}
-          >
-            <h1
-              css={css`
-                @media (max-width: 540px) {
-                  font-size: 24px;
-                  line-height: 28px;
-                }
-                font-family: Avenir;
-                font-style: normal;
-                font-weight: 850;
-                font-size: 36px;
-                line-height: 56px;
-                letter-spacing: 0.02em;
-                margin: 0;
-                color: #ffffff;
-              `}
-            >
-              {`Your Burn Out Score is ${result} out of 7`}
-            </h1>
-          </div>
-          <div
-            css={css`
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            `}
-          >
+          {!resultPageLoad ? (
             <div>
-              <h1
+              <div
                 css={css`
+                  display: flex;
+                  flex-flow: column;
+                  background: #101010;
+                  width: 100%;
+                  height: 100%;
+                `}
+              >
+                <Questionaire questions={questions} index={index} />
+              </div>
+              <div
+                css={css`
+                  margin-top: 64px;
+                `}
+              >
+                <AnswerBar
+                  updateSelected={updateSelected}
+                  selected={selected}
+                />
+              </div>
+              <div
+                css={css`
+                  margin: 120px 0 0 0;
+                  right: 0;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                `}
+              >
+                <button
+                  css={css`
+                    right: 0;
+                    background-color: #202022;
+                    border: 0;
+                    border-radius: 8px;
+                    padding: 2px 56px;
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    justify-content: center;
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  `}
+                  onClick={() => onNext()}
+                >
+                  <h1
+                    css={css`
+                      font-family: Avenir;
+                      font-style: normal;
+                      font-weight: 850;
+                      font-size: 24px;
+                      line-height: 37px;
+                      display: flex;
+                      align-items: center;
+                      text-align: center;
+                      margin: 0 12px 0 0;
+                      color: #ffffff;
+                    `}
+                  >
+                    Next
+                  </h1>
+                  <Image alt="" height={20} width={20} src="/next.svg" />
+                </button>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div>
+                <div
+                  css={css`
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    justify-content: center;
+                  `}
+                >
+                  <Image alt="" height={48} width={48} src={result.emoji} />
+                </div>
+                <div
+                  css={css`
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    justify-content: center;
+                  `}
+                >
+                  <h1
+                    css={css`
+                      @media (max-width: 540px) {
+                        font-size: 24px;
+                        line-height: 28px;
+                      }
+                      font-family: Avenir;
+                      font-style: normal;
+                      font-weight: 850;
+                      font-size: 36px;
+                      line-height: 56px;
+                      letter-spacing: 0.02em;
+                      margin: 0 8px 0 0;
+                      color: #ffffff;
+                    `}
+                  >
+                    {`Your Burn Out Score is `}
+                  </h1>
+                  <h1
+                    css={css`
+                      @media (max-width: 540px) {
+                        font-size: 24px;
+                        line-height: 28px;
+                      }
+                      font-family: Avenir;
+                      font-style: normal;
+                      font-weight: 850;
+                      font-size: 36px;
+                      line-height: 56px;
+                      letter-spacing: 0.02em;
+                      margin: 0;
+                      color: ${result.color};
+                    `}
+                  >
+                    {` ${result.value}`}
+                  </h1>
+                  <h1
+                    css={css`
+                      @media (max-width: 540px) {
+                        font-size: 24px;
+                        line-height: 28px;
+                      }
+                      font-family: Avenir;
+                      font-style: normal;
+                      font-weight: 850;
+                      font-size: 36px;
+                      line-height: 56px;
+                      letter-spacing: 0.02em;
+                      margin: 0 0 0 8px;
+                      color: #ffffff;
+                    `}
+                  >
+                    {` out of 5`}
+                  </h1>
+                </div>
+                <div
+                  css={css`
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  `}
+                >
+                  <div>
+                    <h1
+                      css={css`
                   @media (max-width: 540px) {
                     margin-top: 24px
                     font-size: 20px;
@@ -215,14 +473,49 @@ const MainSection = () => {
                   letter-spacing: 0.02em;
                   color: rgba(255, 255, 255, 0.6);
                 `}
+                    >
+                      {result.prompt}
+                    </h1>
+                  </div>
+                </div>
+              </div>
+              <div
+                css={css`
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-top: 64px;
+                `}
               >
-                {resultPrompt}
-              </h1>
-            </div>
-          </div>
+                {/* <PopupButton
+          id="iHLQJhgO"
+          style={{
+            fontSize: 20,
+            width: "50%",
+            backgroundColor: "#202022",
+            border: 0,
+            borderRadius: 8,
+            padding: "8px 16px",
+            color: "#ffffff",
+            fontFamily: "avenir",
+            fontWeight: 850,
+            fontSize: 24,
+          }}
+          className="my-button"
+        >
+          Subscribe for updates
+        </PopupButton> */}
+                <Widget
+                  id="iHLQJhgO"
+                  style={{ width: "100%", height: 500 }}
+                  className="my-form"
+                />
+              </div>
+            </>
+          )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 
