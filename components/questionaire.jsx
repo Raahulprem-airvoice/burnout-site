@@ -108,18 +108,19 @@ const Questionaire = (props) => {
           <h1
             css={css`
               @media (max-width: 540px) {
-                font-size: 20px;
+                font-size: 24px;
                 line-height: 28px;
+                margin: 16px 0 0 0;
               }
               font-family: Avenir;
               font-style: normal;
               font-weight: 850;
-              font-size: 36px;
-              line-height: 56px;
-              letter-spacing: 0.02em;
+              font-size: 48px;
+              line-height: 75px;
               margin: 0;
-              color: #ffffff;
               text-align: center;
+              letter-spacing: 0.02em;
+              color: rgba(255, 255, 255, 0.6);
             `}
           >
             How often do you have any of the following experiences?
@@ -136,19 +137,18 @@ const Questionaire = (props) => {
             <h1
               css={css`
                 @media (max-width: 540px) {
-                  font-size: 24px;
+                  font-size: 20px;
                   line-height: 28px;
-                  margin: 16px 0 0 0;
                 }
                 font-family: Avenir;
                 font-style: normal;
                 font-weight: 850;
-                font-size: 48px;
-                line-height: 75px;
-                margin: 0;
-                text-align: center;
+                font-size: 36px;
+                line-height: 56px;
                 letter-spacing: 0.02em;
-                color: rgba(255, 255, 255, 0.6);
+                margin: 0;
+                color: #ffffff;
+                text-align: center;
               `}
             >
               {props.questions[props.index]}
