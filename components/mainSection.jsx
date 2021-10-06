@@ -52,7 +52,7 @@ const MainSection = () => {
   const onNext = () => {
     const tempSelected = selected;
     let tempIndex = index;
-    if (tempIndex == 1) {
+    if (tempIndex == 20) {
       let tempResult = (bad + (32 - good)) / 21;
       tempResult = Math.round(tempResult * 100) / 100;
       if (tempResult < 3) {
@@ -232,7 +232,7 @@ const MainSection = () => {
                   font-style: normal;
                   font-weight: 500;
                   font-size: 20px;
-                  line-height: 25px;
+                  line-height: 28px;
                   text-align: center;
                   margin: 0;
                   color: #ffffff;
@@ -240,8 +240,8 @@ const MainSection = () => {
               >
                 Burnout is a state of emotional, physical, and mental exhaustion
                 caused by excessive and prolonged stress. What is shocking is
-                that most of us are burnt out at very moment, but never really
-                realize that!
+                that most of us are burnt out at the very moment, but never
+                really realize that!
               </p>
             </div>
             <div
@@ -375,15 +375,6 @@ const MainSection = () => {
               </div>
               <div
                 css={css`
-                  @media (max-width: 640px) {
-                    left: 0;
-                  }
-                  @media (max-width: 1000px) {
-                    left: 10%;
-                  }
-                  @media (max-width: 780px) {
-                    left: 5%;
-                  }
                   display: flex;
                   margin: 80px 0 0 0;
                   position: absolute;
@@ -391,7 +382,16 @@ const MainSection = () => {
                   flex-flow: row wrap;
                   align-items: center;
                   justify-content: center;
-                  left: 20%;
+                  @media (max-width: 1200px) {
+                    width: 90%;
+                  }
+                  width: 80%;
+                  @media (max-width: 1200px) {
+                    width: 99%;
+                  }
+                  @media (max-width: 700px) {
+                    width: 90%;
+                  }
                 `}
               >
                 <h1
