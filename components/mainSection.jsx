@@ -477,10 +477,10 @@ const MainSection = () => {
                   font-style: normal;
                   font-weight: 850;
                   font-size: 24px;
-                  line-height: 75px;
-                  margin: 0;
+                  margin-top: 18px;
                   letter-spacing: 0.02em;
                   color: rgba(255, 255, 255, 0.6);
+                  text-align: center;
                 `}
                     >
                       {result.prompt}
