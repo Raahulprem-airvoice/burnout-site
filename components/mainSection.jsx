@@ -58,16 +58,14 @@ const MainSection = () => {
       if (tempResult < 3) {
         setResult({
           value: tempResult,
-          emoji:
-            "https://firebasestorage.googleapis.com/v0/b/airvoice-a7d0f.appspot.com/o/burn%20out%20site%2Fsmiling-face-with-halo.svg?alt=media&token=b25f09f0-15e2-421e-b422-4527b69ddeac",
+          emoji: "smiling-face-with-halo.svg",
           color: "#76e250",
           prompt: "You are doing Good",
         });
       } else if (tempResult >= 3 && tempResult < 4) {
         setResult({
           value: tempResult,
-          emoji:
-            "https://firebasestorage.googleapis.com/v0/b/airvoice-a7d0f.appspot.com/o/burn%20out%20site%2Fgrimacing-face.svg?alt=media&token=c161b4f5-c448-460b-9522-d5d20da85590",
+          emoji: "grimacing-face.svg",
           color: "#e2dc50",
           prompt:
             " It would be wise for you to examine your work and life, evaluate your priorities and consider possible changes.",
@@ -75,8 +73,7 @@ const MainSection = () => {
       } else if (tempResult >= 4 && tempResult < 5) {
         setResult({
           value: tempResult,
-          emoji:
-            "https://firebasestorage.googleapis.com/v0/b/airvoice-a7d0f.appspot.com/o/burn%20out%20site%2Fface-with-spiral-eyes.svg?alt=media&token=0bdd53b7-4577-4672-b0a5-7b25158fb68b",
+          emoji: "face-with-spiral-eyes.svg",
           color: "#fd4931",
           prompt:
             "You are experiencing burnout to the extent that it is mandatory that you do something about it.",
@@ -84,8 +81,7 @@ const MainSection = () => {
       } else if (tempResult > 5) {
         setResult({
           value: tempResult,
-          emoji:
-            "https://firebasestorage.googleapis.com/v0/b/airvoice-a7d0f.appspot.com/o/burn%20out%20site%2Fdizzy-face.svg?alt=media&token=e5621812-aa82-4135-af35-f909fb4ca559",
+          emoji: "dizzy-face.svg",
           color: "#ff3115",
           prompt: "Indicates an acute state and a need for immediate help.",
         });
@@ -206,12 +202,7 @@ const MainSection = () => {
                 height: 100%;
               `}
             >
-              <Image
-                alt=""
-                height={301}
-                width={536}
-                src="https://firebasestorage.googleapis.com/v0/b/airvoice-a7d0f.appspot.com/o/burn%20out%20site%2FlandingImage.svg?alt=media&token=645acf85-01ef-41c5-b561-fb28361fc63d"
-              />
+              <Image alt="" height={301} width={536} src="/landingImage" />
             </div>
             <div
               css={css`
