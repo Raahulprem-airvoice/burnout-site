@@ -52,7 +52,7 @@ const MainSection = () => {
   const onNext = () => {
     const tempSelected = selected;
     let tempIndex = index;
-    if (tempIndex == 20) {
+    if (tempIndex == 1) {
       let tempResult = (bad + (32 - good)) / 21;
       tempResult = Math.round(tempResult * 100) / 100;
       if (tempResult < 3) {
@@ -208,6 +208,8 @@ const MainSection = () => {
               css={css`
                 @media (max-width: 640px) {
                   width: 90%;
+                  min-width: 320px;
+                  font-size: 18px;
                 }
                 display: flex;
                 align-items: center;
@@ -215,7 +217,8 @@ const MainSection = () => {
                 margin-top: 36px;
                 flex-flow: row wrap;
                 background: #101010;
-                width: 70%;
+                width: 40%;
+                min-width: 640px;
                 text-align: center;
                 height: 100%;
               `}
@@ -228,7 +231,7 @@ const MainSection = () => {
                   font-family: Avenir;
                   font-style: normal;
                   font-weight: 500;
-                  font-size: 18px;
+                  font-size: 20px;
                   line-height: 25px;
                   text-align: center;
                   margin: 0;
@@ -369,6 +372,52 @@ const MainSection = () => {
                   </h1>
                   <Image alt="" height={20} width={20} src="/next.svg" />
                 </button>
+              </div>
+              <div
+                css={css`
+                  @media (max-width: 640px) {
+                    left: 0;
+                  }
+                  @media (max-width: 1000px) {
+                    left: 10%;
+                  }
+                  @media (max-width: 780px) {
+                    left: 5%;
+                  }
+                  display: flex;
+                  margin: 80px 0 0 0;
+                  position: absolute;
+                  bottom: 20px;
+                  flex-flow: row wrap;
+                  align-items: center;
+                  justify-content: center;
+                  left: 20%;
+                `}
+              >
+                <h1
+                  css={css`
+                    @media (max-width: 640px) {
+                      font-size: 12px;
+                      width: 90%;
+                      line-height: 16px;
+                      left: 0;
+                    }
+                    font-family: Avenir;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 37px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    margin: 0px 0px 0 4px;
+                    color: #ffffff;
+                    opacity: 0.6;
+                  `}
+                >
+                  * This is not a clinical assessment tool. For a more detailed
+                  assessment, consult a certified therapist.
+                </h1>
               </div>
             </div>
           ) : (
