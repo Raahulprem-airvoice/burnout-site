@@ -52,20 +52,20 @@ const MainSection = () => {
   const onNext = () => {
     const tempSelected = selected;
     let tempIndex = index;
-    if (tempIndex == 20) {
+    if (tempIndex == 2) {
       let tempResult = (bad + (32 - good)) / 21;
       tempResult = Math.round(tempResult * 100) / 100;
       if (tempResult < 3) {
         setResult({
           value: tempResult,
-          emoji: "smiling-face-with-halo.svg",
+          emoji: "/face/smiling-face-with-halo.svg",
           color: "#76e250",
           prompt: "You are doing Good",
         });
       } else if (tempResult >= 3 && tempResult < 4) {
         setResult({
           value: tempResult,
-          emoji: "grimacing-face.svg",
+          emoji: "/face/grimacing-face.svg",
           color: "#e2dc50",
           prompt:
             " It would be wise for you to examine your work and life, evaluate your priorities and consider possible changes.",
@@ -73,7 +73,7 @@ const MainSection = () => {
       } else if (tempResult >= 4 && tempResult < 5) {
         setResult({
           value: tempResult,
-          emoji: "face-with-spiral-eyes.svg",
+          emoji: "/face/face-with-spiral-eyes.svg",
           color: "#fd4931",
           prompt:
             "You are experiencing burnout to the extent that it is mandatory that you do something about it.",
@@ -81,7 +81,7 @@ const MainSection = () => {
       } else if (tempResult > 5) {
         setResult({
           value: tempResult,
-          emoji: "dizzy-face.svg",
+          emoji: "/face/dizzy-face.svg",
           color: "#ff3115",
           prompt: "Indicates an acute state and a need for immediate help.",
         });
@@ -202,7 +202,7 @@ const MainSection = () => {
                 height: 100%;
               `}
             >
-              <Image alt="" height={301} width={536} src="/landingImage" />
+              <Image alt="" height={301} width={536} src="/landingImage.svg" />
             </div>
             <div
               css={css`
