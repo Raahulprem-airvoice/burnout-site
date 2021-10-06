@@ -152,6 +152,9 @@ const MainSection = () => {
                   text-align: center;
                   margin: 0 12px 0 0;
                   color: #ffffff;
+                  &:hover {
+                    cursor: pointer;
+                  }
                 `}
               >
                 Next
@@ -185,7 +188,7 @@ const MainSection = () => {
                 color: #ffffff;
               `}
             >
-              {`Your Burn Out Score is ${result}`}
+              {`Your Burn Out Score is ${result} out of 7`}
             </h1>
           </div>
           <div

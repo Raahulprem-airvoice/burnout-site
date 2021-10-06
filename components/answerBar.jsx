@@ -73,6 +73,9 @@ const AnswerBar = (props) => {
                   width: 16px;
                   border-radius: 20px;
                   border: 0;
+                  &:hover {
+                    cursor: pointer;
+                  }
                 `}
                 onClick={() => props.updateSelected(1)}
               />
@@ -87,6 +90,9 @@ const AnswerBar = (props) => {
                   width: 16px;
                   border-radius: 20px;
                   border: 0;
+                  &:hover {
+                    cursor: pointer;
+                  }
                 `}
                 onClick={() => props.updateSelected(2)}
               />
@@ -101,6 +107,9 @@ const AnswerBar = (props) => {
                   width: 16px;
                   border-radius: 20px;
                   border: 0;
+                  &:hover {
+                    cursor: pointer;
+                  }
                 `}
                 onClick={() => props.updateSelected(3)}
               />
@@ -115,6 +124,9 @@ const AnswerBar = (props) => {
                   width: 16px;
                   border-radius: 20px;
                   border: 0;
+                  &:hover {
+                    cursor: pointer;
+                  }
                 `}
                 onClick={() => props.updateSelected(4)}
               />
@@ -129,6 +141,9 @@ const AnswerBar = (props) => {
                   width: 16px;
                   border-radius: 20px;
                   border: 0;
+                  &:hover {
+                    cursor: pointer;
+                  }
                 `}
                 onClick={() => props.updateSelected(5)}
               />
@@ -143,6 +158,9 @@ const AnswerBar = (props) => {
                   width: 16px;
                   border-radius: 20px;
                   border: 0;
+                  &:hover {
+                    cursor: pointer;
+                  }
                 `}
                 onClick={() => props.updateSelected(6)}
               />
@@ -157,6 +175,9 @@ const AnswerBar = (props) => {
                   width: 16px;
                   border-radius: 20px;
                   border: 0;
+                  &:hover {
+                    cursor: pointer;
+                  }
                 `}
                 onClick={() => props.updateSelected(7)}
               />
@@ -184,6 +205,9 @@ const AnswerBar = (props) => {
                   @media (max-width: 390px) {
                     font-size: 10px;
                   }
+                  &:hover {
+                    cursor: pointer;
+                  }
                   font-family: Avenir;
                   font-style: normal;
                   font-weight: 850;
@@ -195,6 +219,7 @@ const AnswerBar = (props) => {
 
                   color: #ffffff;
                 `}
+                onClick={() => props.updateSelected(index + 1)}
               >
                 {answer}
               </div>

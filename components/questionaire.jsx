@@ -17,9 +17,6 @@ const Questionaire = (props) => {
       <div>
         <div
           css={css`
-            @media (max-width: 1024px) {
-              width: 80%;
-            }
             display: flex;
             align-items: center;
             justify-content: center;
@@ -27,13 +24,13 @@ const Questionaire = (props) => {
         >
           <div
             css={css`
-              @media (max-width: 1024px) {
-                width: 80%;
-              }
-              width: 100%;
+              background-color: #202022;
+              border-radius: 48px;
+              padding: 8px 24px;
               display: flex;
               align-items: center;
-              justify-content: flex-start;
+              justify-content: center;
+              margin-bottom: 48px;
             `}
           >
             <h1
@@ -46,7 +43,7 @@ const Questionaire = (props) => {
                 font-family: Avenir;
                 font-style: normal;
                 font-weight: 850;
-                font-size: 24px;
+                font-size: 36px;
                 line-height: 56px;
                 letter-spacing: 0.02em;
                 margin: 0;
@@ -88,7 +85,7 @@ const Questionaire = (props) => {
                 font-family: Avenir;
                 font-style: normal;
                 font-weight: 850;
-                font-size: 24px;
+                font-size: 36px;
                 line-height: 56px;
                 letter-spacing: 0.02em;
                 margin: 0;
@@ -97,7 +94,7 @@ const Questionaire = (props) => {
                 opacity: 0.9;
               `}
             >
-              21.
+              21
             </h1>
           </div>
         </div>
