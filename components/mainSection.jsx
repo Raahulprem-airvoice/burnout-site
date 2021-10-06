@@ -52,7 +52,7 @@ const MainSection = () => {
   const onNext = () => {
     const tempSelected = selected;
     let tempIndex = index;
-    if (tempIndex == 2) {
+    if (tempIndex == 20) {
       let tempResult = (bad + (32 - good)) / 21;
       tempResult = Math.round(tempResult * 100) / 100;
       if (tempResult < 3) {
@@ -236,11 +236,9 @@ const MainSection = () => {
                 `}
               >
                 Burnout is a state of emotional, physical, and mental exhaustion
-                caused by excessive and prolonged stress. It occurs when you
-                feel overwhelmed, emotionally drained, and unable to meet
-                constant demands. It reduces productivity and saps your energy,
-                leaving you feeling increasingly helpless, hopeless, cynical,
-                and resentful.
+                caused by excessive and prolonged stress. What is shocking is
+                that most of us are burnt out at very moment, but never really
+                realize that!
               </p>
             </div>
             <div
@@ -270,7 +268,7 @@ const MainSection = () => {
                   color: #e25050;
                 `}
               >
-                Are you facing burn out?
+                Find out if you are burnt out!
               </h2>
 
               <button
