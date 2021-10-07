@@ -20,7 +20,7 @@ export default function Home() {
         height: 100vh;
       `}
     >
-      <Script>{`(function(h,o,t,j,a,r){
+      <Script id="hotjar">{`(function(h,o,t,j,a,r){
         h.hj=h.hjfunction(){(h.hj.q=h.hj.q[]).push(arguments)};
         h._hjSettings={hjid:2640932,hjsv:6};
         a=o.getElementsByTagName('head')[0];
