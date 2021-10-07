@@ -25,6 +25,16 @@ export default function Home() {
           name="description"
           content="Burnout is a state of emotional, physical, and mental exhaustion caused by excessive and prolonged stress. It occurs when you feel overwhelmed, emotionally drained, and unable to meet constant demands."
         />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-LD3GCMKT13%22%3E"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-LD3GCMKT13');
+        </script>
         <meta property="og:image" content="/landingImage.svg" />
         <link rel="icon" href="/favicon.ico" />
         <link
