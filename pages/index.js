@@ -21,10 +21,11 @@ export default function Home() {
       `}
     >
       <Script
+        id="google-analytics-1"
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-LD3GCMKT13%22%3E"
       ></Script>
-      <Script>
+      <Script id="google-analytics-2">
         window.dataLayer = window.dataLayer || []; function gtag()
         {dataLayer.push(arguments)}
         gtag('js', new Date()); gtag('config', 'G-LD3GCMKT13');
