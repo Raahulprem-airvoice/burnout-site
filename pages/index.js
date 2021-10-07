@@ -1,4 +1,5 @@
 // this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
+import Script from "next/script";
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from "@emotion/react";
 import Head from "next/head";
@@ -26,15 +27,15 @@ export default function Home() {
           content="Burnout is a state of emotional, physical, and mental exhaustion caused by excessive and prolonged stress. It occurs when you feel overwhelmed, emotionally drained, and unable to meet constant demands."
         />
 
-        <script
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-LD3GCMKT13%22%3E"
-        ></script>
-        <script>
+        ></Script>
+        <Script>
           window.dataLayer = window.dataLayer || []; function gtag()
           {dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'G-LD3GCMKT13');
-        </script>
+        </Script>
         <meta property="og:image" content="/landingImage.svg" />
         <link rel="icon" href="/favicon.ico" />
         <link
