@@ -20,6 +20,15 @@ export default function Home() {
         height: 100vh;
       `}
     >
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-LD3GCMKT13%22%3E"
+      ></Script>
+      <Script>
+        window.dataLayer = window.dataLayer || []; function gtag()
+        {dataLayer.push(arguments)}
+        gtag('js', new Date()); gtag('config', 'G-LD3GCMKT13');
+      </Script>
       <Head>
         <title>How Burn Out Are You?</title>
         <meta
@@ -27,15 +36,6 @@ export default function Home() {
           content="Burnout is a state of emotional, physical, and mental exhaustion caused by excessive and prolonged stress. It occurs when you feel overwhelmed, emotionally drained, and unable to meet constant demands."
         />
 
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-LD3GCMKT13%22%3E"
-        ></Script>
-        <Script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-LD3GCMKT13');
-        </Script>
         <meta property="og:image" content="/landingImage.svg" />
         <link rel="icon" href="/favicon.ico" />
         <link
