@@ -115,7 +115,7 @@ const Questionaire = (props) => {
               font-family: Avenir;
               font-style: normal;
               font-weight: 850;
-              font-size: 48px;
+              font-size: 40px;
               line-height: 75px;
               margin: 0;
               text-align: center;
@@ -143,7 +143,7 @@ const Questionaire = (props) => {
                 font-family: Avenir;
                 font-style: normal;
                 font-weight: 850;
-                font-size: 36px;
+                font-size: 32px;
                 line-height: 56px;
                 letter-spacing: 0.02em;
                 margin: 0;
