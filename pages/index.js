@@ -26,9 +26,9 @@ export default function Home() {
         src="https://www.googletagmanager.com/gtag/js?id=G-LD3GCMKT13%22%3E"
       ></Script>
       <Script id="google-analytics-2">
-        window.dataLayer = window.dataLayer || []; function gtag()
+        {`window.dataLayer = window.dataLayer || []; function gtag()
         {dataLayer.push(arguments)}
-        gtag('js', new Date()); gtag('config', 'G-LD3GCMKT13');
+        gtag('js', new Date()); gtag('config', 'G-LD3GCMKT13');`}
       </Script>
       <Head>
         <title>How Burn Out Are You?</title>
