@@ -2,11 +2,16 @@
 import Script from "next/script";
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from "@emotion/react";
+import { hotjar } from "react-hotjar";
 import Head from "next/head";
 import Image from "next/image";
 import MainSection from "../components/mainSection";
+import React, { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    hotjar.initialize(2640932, 6);
+  }, []);
   return (
     <div
       css={css`
@@ -20,14 +25,6 @@ export default function Home() {
         height: 100vh;
       `}
     >
-      <Script id="hotjar">{`(function(h,o,t,j,a,r){
-        h.hj=h.hjfunction(){(h.hj.q=h.hj.q[]).push(arguments)};
-        h._hjSettings={hjid:2640932,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-%27,%27.js?sv=%27);`}</Script>
       <Script
         id="google-analytics-1"
         async
