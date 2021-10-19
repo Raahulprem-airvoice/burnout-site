@@ -429,6 +429,7 @@ const MainSection = () => {
                     flex-flow: row wrap;
                     align-items: center;
                     justify-content: center;
+                    margin-top: 48px;
                   `}
                 >
                   <Image alt="" height={48} width={48} src={result.emoji} />
